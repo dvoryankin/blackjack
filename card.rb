@@ -14,5 +14,18 @@ class Card
     "#{@suits[card[0]]} #{@value[card[1]]}"
   end
 
-
+  def summa_cards(cards)
+    summa = 0
+    cards.each do |card|
+      var = @value[card[1]]
+      summa += if %w(V D K).include?var
+                 10
+               elsif var == 'T'
+                 summa + 10 <= 21 ? 10 : 1
+               else
+                 var.to_i
+               end
+    end
+    summa
+  end
 end

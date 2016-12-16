@@ -1,4 +1,4 @@
-require './black'
+require './blackjack'
 
 game = Blackjack.new
 game.start_game
